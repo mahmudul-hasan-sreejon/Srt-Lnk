@@ -9,14 +9,13 @@ import Link from './../imports/ui/Link';
 import NotFound from './../imports/ui/NotFound';
 import Login from './../imports/ui/Login';
 
-window.bh = browserHistory;
 
 const routes = (
   <Router history={browserHistory}>
     <Switch>
       <Route path="/" exact component={Login}/>
       <Route path="/signup" component={Signup}/>
-      <Route path="/link" component={Link}/>
+      <Route path="/links" component={Link}/>
 
       <Route component={NotFound}/>
     </Switch>
