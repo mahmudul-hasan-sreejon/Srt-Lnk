@@ -10,6 +10,7 @@ import NotFound from './../imports/ui/NotFound';
 import Login from './../imports/ui/Login';
 
 
+// all app routes
 const routes = (
   <Router history={browserHistory}>
     <Switch>
