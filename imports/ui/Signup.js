@@ -23,7 +23,8 @@ export default class Signup extends React.Component {
 
     // create account user
     Accounts.createUser({email, password}, err => {
-      console.log('Signup callback...', err);
+      const error = err ? err.reason : '';
+      this.setState({error});
     });
   }
 
