@@ -1,11 +1,12 @@
 import React from 'react';
+import { Accounts } from 'meteor/accounts-base';
 import browserHistory from './../history';
 
 
 export default class Link extends React.Component {
   onLogout() {
-    // goto root page after logout
-    browserHistory.push('/');
+    // logout user
+    Accounts.logout();
   }
 
   render() {
