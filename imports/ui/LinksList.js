@@ -15,7 +15,7 @@ export default class LinksList extends React.Component {
   }
 
   componentDidMount() {
-    Tracker.autorun(() => {
+    this.linksTracker = Tracker.autorun(() => {
       // find all user links
       const links = Links.find().fetch();
       // state update
@@ -23,7 +23,10 @@ export default class LinksList extends React.Component {
     });
   }
 
-  
+  componentWillUnmount() {
+    // stop the 'linksTracker' on component unmount
+    this.linksTracker.stop();
+  }
 
   renderLinksListItems() {
     // get all user links
