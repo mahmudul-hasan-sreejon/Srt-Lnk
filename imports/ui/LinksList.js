@@ -14,6 +14,15 @@ export default class LinksList extends React.Component {
     };
   }
 
+  componentDidMount() {
+    Tracker.autorun(() => {
+      // find all user links
+      const links = Links.find().fetch();
+      // state update
+      this.setState({ links });
+    });
+  }
+
   
 
   renderLinksListItems() {
