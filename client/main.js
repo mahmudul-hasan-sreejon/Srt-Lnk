@@ -2,7 +2,7 @@ import { Meteor } from 'meteor/meteor';
 import { Tracker } from 'meteor/tracker';
 import ReactDOM from 'react-dom';
 
-import { routes, onAuthChange } from './../imports/routes/routes'
+import { routes, onAuthChange } from './../imports/routes/routes';
 
 
 // track user authentication status
@@ -13,6 +13,7 @@ Tracker.autorun(() => {
   onAuthChange(isAuthenticated);
 });
 
+// start app
 Meteor.startup(() => {
   // render the app
   ReactDOM.render(routes, document.getElementById('app'));
