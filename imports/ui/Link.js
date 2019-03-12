@@ -21,7 +21,8 @@ export default class Link extends React.Component {
 
     if(url) {
       // insert url into database
-      Links.insert({ url, userId: Meteor.userId() });
+      Meteor.call('links.insert', url);
+
       // reset url ref.
       this.refs.url.value = '';
     }
