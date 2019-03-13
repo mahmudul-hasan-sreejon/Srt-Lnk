@@ -23,16 +23,12 @@ Meteor.methods({
     }
 
     // validate url
-    try {
-      new SimpleSchema({
-        url: {
-          type: String,
-          regEx: SimpleSchema.RegEx.Url,
-        }
-      }).validate({ url });
-    } catch (err) { // if not valid throw an meteor error
-      throw new Meteor.Error(400, err.message);
-    }
+    new SimpleSchema({
+      url: {
+        type: String,
+        regEx: SimpleSchema.RegEx.Url,
+      }
+    }).validate({ url });
 
     // insert url
     Links.insert({
