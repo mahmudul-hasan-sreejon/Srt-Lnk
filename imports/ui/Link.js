@@ -5,16 +5,16 @@ import LinksList from './LinksList';
 import AddLink from './AddLink';
 
 
-export default class Link extends React.Component {
-  render() {
-    return (
-      <div>
-        <PrivateHeader title="Yours Links"/>
+const Link = () => {
+  return (
+    <div>
+      <PrivateHeader title="Your Links"/>
 
-        <LinksList />
+      <LinksList />
 
-        <AddLink />
-      </div>
-    );
-  }
-}
+      <AddLink />
+    </div>
+  );
+};
+
+export default Link;
