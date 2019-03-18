@@ -56,5 +56,6 @@ LinksListItem.propTypes = {
   _id: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired,
   userId: PropTypes.string.isRequired,
-  shortUrl: PropTypes.string.isRequired
+  shortUrl: PropTypes.string.isRequired,
+  visible: PropTypes.bool.isRequired
 };
