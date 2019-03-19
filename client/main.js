@@ -1,6 +1,7 @@
+import ReactDOM from 'react-dom';
 import { Meteor } from 'meteor/meteor';
 import { Tracker } from 'meteor/tracker';
-import ReactDOM from 'react-dom';
+import { Session } from 'meteor/session';
 
 import './../imports/startup/simple-schema-config';
 
@@ -17,6 +18,8 @@ Tracker.autorun(() => {
 
 // start app
 Meteor.startup(() => {
+  // set a session variable
+  Session.set('showVisible', true);
   // render the app
   ReactDOM.render(routes, document.getElementById('app'));
 });
