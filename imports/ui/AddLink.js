@@ -14,7 +14,7 @@ export default class AddLink extends React.Component {
       url: '',
       isOpen: false,
       error: ''
-    }
+    };
   }
   
   onSubmit(e) {
@@ -26,9 +26,8 @@ export default class AddLink extends React.Component {
 
     // insert url into database
     Meteor.call('links.insert', url, (err) => {
-      if(!err) { // if no error then reset form url field, close the modal & reset errors
-        this.closeModal();
-      }
+      // if no error then reset form url field, close the modal & reset errors
+      if(!err) this.closeModal();
       else this.setState({ error: err.reason });
     });
 
@@ -58,7 +57,7 @@ export default class AddLink extends React.Component {
   }
 
   afterOpenModal() {
-    // focus inputbox after open
+    // focus on input box after open
     this.refs.url.focus();
   }
 

@@ -10,7 +10,7 @@ export default class Signup extends React.Component {
 
     this.state = {
       error: ''
-    }
+    };
   }
 
   onSubmit(e) {
@@ -27,9 +27,9 @@ export default class Signup extends React.Component {
     }
 
     // create account user
-    Accounts.createUser({email, password}, err => {
+    Accounts.createUser({ email, password }, err => {
       const error = err ? err.reason : '';
-      this.setState({error});
+      this.setState({ error });
     });
   }
 
@@ -43,6 +43,7 @@ export default class Signup extends React.Component {
         <form onSubmit={this.onSubmit.bind(this)} noValidate>
           <input type="email" ref="email" name="email" placeholder="Email" />
           <input type="password" ref="password" name="password" placeholder="Password" />
+
           <button>Create Account</button>
         </form>
 

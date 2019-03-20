@@ -22,7 +22,7 @@ export default class LinksList extends React.Component {
     this.linksTracker = Tracker.autorun(() => {
       // subscribe to 'links'
       Meteor.subscribe('links');
-      // find all user links
+      // find all visible user links
       const links = Links.find({ visible: Session.get('showVisible') }).fetch();
       // state update
       this.setState({ links });
@@ -30,12 +30,12 @@ export default class LinksList extends React.Component {
   }
 
   componentWillUnmount() {
-    // stop the 'linksTracker' on component unmount
+    // stop the 'linksTracker'
     this.linksTracker.stop();
   }
 
+  // get all user links
   renderLinksListItems() {
-    // get all user links
     return (
       this.state.links.map((link) => {
         // get current url
@@ -51,6 +51,7 @@ export default class LinksList extends React.Component {
     return (
       <div>
         <p>Links List</p>
+
         <div>
           {this.renderLinksListItems()}
         </div>

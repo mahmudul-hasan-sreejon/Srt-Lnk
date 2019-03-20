@@ -17,7 +17,7 @@ const authenticatedPages = ['/links'];
 const onEnterPublicPage = () => {
   const pathname = browserHistory.location.pathname;
 
-  if(Meteor.userId()) { // if a user has logged in
+  if(Meteor.userId()) { // if user has logged in
     browserHistory.replace('/links');
     return <Link />;
   }

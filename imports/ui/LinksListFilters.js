@@ -20,7 +20,7 @@ export default class LinksListFilters extends React.Component {
   }
 
   componentWillUnmount() {
-    // stop tracker on component unmount
+    // stop tracker
     this.linksListFiltersTracker.stop();
   }
 

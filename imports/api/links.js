@@ -11,7 +11,7 @@ export const Links =  new Mongo.Collection('links');
 // if in server then create a publication named 'links'
 if(Meteor.isServer) {
   Meteor.publish('links', function() {
-    return Links.find({userId: this.userId});
+    return Links.find({ userId: this.userId });
   });
 }
 
@@ -19,9 +19,7 @@ if(Meteor.isServer) {
 Meteor.methods({
   'links.insert'(url) {
     // if no user is logged in then throw an error
-    if(!this.userId) {
-      throw new Meteor.Error('not-authorized');
-    }
+    if(!this.userId) throw new Meteor.Error('not-authorized');
 
     // validate url
     new SimpleSchema({
@@ -44,9 +42,7 @@ Meteor.methods({
 
   'links.setVisibility'(_id, visible) {
     // if no user is logged in then throw an error
-    if(!this.userId) {
-      throw new Meteor.Error('not-authorized');
-    }
+    if(!this.userId) throw new Meteor.Error('not-authorized');
 
     // validate link _id & visible
     new SimpleSchema({
@@ -63,9 +59,7 @@ Meteor.methods({
         _id,
         userId: this.userId
       },
-      {
-        $set: { visible }
-      }
+      { $set: { visible } }
     );
   },
 

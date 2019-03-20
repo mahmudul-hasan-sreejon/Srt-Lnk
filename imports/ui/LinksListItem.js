@@ -19,15 +19,13 @@ export default class LinksListItem extends React.Component {
     // copy all text from new clipboard
     this.clipboard = new ClipboardJS(this.refs.copy);
 
-    this.clipboard.
-    on('success', () => {
+    this.clipboard.on('success', () => {
       // update isCopied state
       this.setState({ isCopied: true });
 
       // update isCopied state after 1.2 sec
       setTimeout(() => this.setState({ isCopied: false }), 1200);
-    }).
-    on('error', () => {
+    }).on('error', () => {
       alert('Unable to copy');
     });
   }
@@ -64,6 +62,8 @@ export default class LinksListItem extends React.Component {
         <p>Short Url: {shortUrl}</p>
         <p>Is Visible? : {this.props.visible.toString()}</p>
         {this.renderStats()}
+
+        <a href={shortUrl} target='_blank'>Visit</a>
 
         <button ref="copy" data-clipboard-text={shortUrl}>
           {this.state.isCopied ? 'Copied' : 'Copy'}
