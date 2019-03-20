@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Meteor } from 'meteor/meteor';
 
 import ClipboardJS from 'clipboard';
+import moment from 'moment';
 
 
 export default class LinksListItem extends React.Component {
@@ -41,6 +42,18 @@ export default class LinksListItem extends React.Component {
     Meteor.call('links.setVisibility', this.props._id, !this.props.visible);
   }
 
+  renderStats() {
+    const visitedCount = this.props.visitedCount;
+    const visitMessage = visitedCount > 1 ? 'visits' : 'visit';
+
+    const lastVisitedAt = this.props.lastVisitedAt;
+    const lastVisitedMessage = typeof lastVisitedAt === 'number' ? `(visited ${moment(lastVisitedAt).fromNow()})` : null;
+
+    return (
+      <p>{visitedCount} {visitMessage} {lastVisitedMessage}</p>
+    );
+  }
+
   render() {
     const url = this.props.url;
     const shortUrl = this.props.shortUrl;
@@ -49,8 +62,8 @@ export default class LinksListItem extends React.Component {
       <div>
         <p>Url: {url}</p>
         <p>Short Url: {shortUrl}</p>
-        
-        <p>Visible: {this.props.visible.toString()}</p>
+        <p>Is Visible? : {this.props.visible.toString()}</p>
+        {this.renderStats()}
 
         <button ref="copy" data-clipboard-text={shortUrl}>
           {this.state.isCopied ? 'Copied' : 'Copy'}
@@ -69,5 +82,7 @@ LinksListItem.propTypes = {
   url: PropTypes.string.isRequired,
   userId: PropTypes.string.isRequired,
   shortUrl: PropTypes.string.isRequired,
-  visible: PropTypes.bool.isRequired
+  visible: PropTypes.bool.isRequired,
+  visitedCount: PropTypes.number.isRequired,
+  lastVisitedAt: PropTypes.number
 };
