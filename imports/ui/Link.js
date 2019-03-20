@@ -2,8 +2,8 @@ import React from 'react';
 
 import PrivateHeader from './PrivateHeader';
 import LinksListFilters from './LinksListFilters';
-import LinksList from './LinksList';
 import AddLink from './AddLink';
+import LinksList from './LinksList';
 
 
 const Link = () => {
@@ -13,9 +13,9 @@ const Link = () => {
 
       <LinksListFilters />
 
-      <LinksList />
-
       <AddLink />
+
+      <LinksList />
     </div>
   );
 };
