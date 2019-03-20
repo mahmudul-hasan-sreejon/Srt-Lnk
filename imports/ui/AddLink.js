@@ -12,7 +12,8 @@ export default class AddLink extends React.Component {
 
     this.state = {
       url: '',
-      isOpen: false
+      isOpen: false,
+      error: ''
     }
   }
   
@@ -23,18 +24,18 @@ export default class AddLink extends React.Component {
     // get user url
     const url = this.state.url;
 
-    if(url) {
-      // insert url into database
-      Meteor.call('links.insert', url, (err) => {
-        if(!err) {
-          // reset form url field & close the modal
-          this.setState({
-            url: '',
-            isOpen: false
-          });
-        }
-      });
-    }
+    // insert url into database
+    Meteor.call('links.insert', url, (err) => {
+      if(!err) { // if no error then reset form url field, close the modal & reset errors
+        this.setState({
+          url: '',
+          isOpen: false,
+          error: ''
+        });
+      }
+      else this.setState({ error: err.reason });
+    });
+
   }
 
   onChange(e) {
@@ -43,10 +44,11 @@ export default class AddLink extends React.Component {
   }
 
   toggleModal() {
-    // toggle the modal & reset form url field
+    // toggle the modal, reset form url field & reset errors
     this.setState({
       isOpen: !this.state.isOpen,
-      url: ''
+      url: '',
+      error: ''
     });
   }
 
@@ -56,7 +58,9 @@ export default class AddLink extends React.Component {
         <button onClick={this.toggleModal.bind(this)}>Add Link</button>
 
         <Modal isOpen={this.state.isOpen} contentLabel='Add Link'>
-          <p>Add a Link</p>
+          <h1>Add a Link</h1>
+
+          {this.state.error ? <p>{this.state.error}</p> : undefined}
 
           <form onSubmit={this.onSubmit.bind(this)}>
             <input type='text' placeholder='URL' value={this.state.url} onChange={this.onChange.bind(this)} />
