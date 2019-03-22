@@ -64,7 +64,7 @@ export default class AddLink extends React.Component {
   render() {
     return (
       <div>
-        <button onClick={this.openModal.bind(this)}>Add Link</button>
+        <button onClick={this.openModal.bind(this)} className='button'>Add Link</button>
 
         <Modal contentLabel='Add Link' isOpen={this.state.isOpen} onAfterOpen={this.afterOpenModal.bind(this)} onRequestClose={this.closeModal.bind(this)}>
           <h1>Add a Link</h1>

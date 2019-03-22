@@ -10,7 +10,7 @@ const NotFound = () => {
 
         <p>We're unable to find that page.</p>
 
-        <Link to='/'>HEAD HOME</Link>
+        <Link to='/' className='button button--link'>HEAD HOME</Link>
       </div>
     </div>
   );

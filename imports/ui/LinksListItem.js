@@ -63,13 +63,13 @@ export default class LinksListItem extends React.Component {
         <p>Is Visible? : {this.props.visible.toString()}</p>
         {this.renderStats()}
 
-        <a href={shortUrl} target='_blank'>Visit</a>
+        <a href={shortUrl} target='_blank' className='button button--pill button--link'>Visit</a>
 
-        <button ref="copy" data-clipboard-text={shortUrl}>
+        <button ref="copy" data-clipboard-text={shortUrl} className='button button--pill'>
           {this.state.isCopied ? 'Copied' : 'Copy'}
         </button>
 
-        <button onClick={this.updateVisibility.bind(this)}>
+        <button onClick={this.updateVisibility.bind(this)} className='button button--pill'>
           {this.props.visible ? 'Hide' : 'Unhide'}
         </button>
       </div>
