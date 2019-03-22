@@ -1,9 +1,18 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 
 const NotFound = () => {
   return (
-    <h2>Oops, Url Not Found...</h2>
+    <div className='boxed-view'>
+      <div className='boxed-view__box'>
+        <h1>Page Not Found</h1>
+
+        <p>We're unable to find that page.</p>
+
+        <Link to='/'>HEAD HOME</Link>
+      </div>
+    </div>
   );
 };
 
