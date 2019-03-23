@@ -11,11 +11,13 @@ const Link = () => {
     <div>
       <PrivateHeader title="Your Links"/>
 
-      <LinksListFilters />
+      <div className='page-content'>
+        <LinksListFilters />
 
-      <AddLink />
+        <AddLink />
 
-      <LinksList />
+        <LinksList />
+      </div>
     </div>
   );
 };
