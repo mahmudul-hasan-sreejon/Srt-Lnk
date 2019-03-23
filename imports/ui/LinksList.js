@@ -36,6 +36,14 @@ export default class LinksList extends React.Component {
 
   // get all user links
   renderLinksListItems() {
+    if(this.state.links.length === 0) {
+      return (
+        <div className='item'>
+          <p className='item__status-message'>No links found.</p>
+        </div>
+      );
+    }
+    
     return (
       this.state.links.map((link) => {
         // get current url
@@ -50,8 +58,6 @@ export default class LinksList extends React.Component {
   render() {
     return (
       <div>
-        <p>Links List</p>
-
         <div>
           {this.renderLinksListItems()}
         </div>

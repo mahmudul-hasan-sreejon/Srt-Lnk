@@ -48,7 +48,7 @@ export default class LinksListItem extends React.Component {
     const lastVisitedMessage = typeof lastVisitedAt === 'number' ? `(visited ${moment(lastVisitedAt).fromNow()})` : null;
 
     return (
-      <p>{visitedCount} {visitMessage} {lastVisitedMessage}</p>
+      <p className='item__message'>{visitedCount} {visitMessage} {lastVisitedMessage}</p>
     );
   }
 
@@ -57,10 +57,9 @@ export default class LinksListItem extends React.Component {
     const shortUrl = this.props.shortUrl;
 
     return (
-      <div>
-        <p>Url: {url}</p>
-        <p>Short Url: {shortUrl}</p>
-        <p>Is Visible? : {this.props.visible.toString()}</p>
+      <div className='item'>
+        <h2>{url}</h2>
+        <p className='item__message'>{shortUrl}</p>
         {this.renderStats()}
 
         <a href={shortUrl} target='_blank' className='button button--pill button--link'>Visit</a>
