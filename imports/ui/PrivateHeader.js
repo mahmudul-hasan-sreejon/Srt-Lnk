@@ -12,10 +12,12 @@ const PrivateHeader = (props) => {
   };
 
   return (
-    <div>
-      <h1>{title}</h1>
+    <div className='header'>
+      <div className='header__content'>
+        <h1 className='header__title'>{title}</h1>
 
-      <button onClick={onLogout}>Logout</button>
+        <button onClick={onLogout} className='button button--link-text'>Logout</button>
+      </div>
     </div>
   );
 };
