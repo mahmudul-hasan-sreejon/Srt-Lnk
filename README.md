@@ -2,6 +2,8 @@
 
 Link/Url shortener web app that keeps track of links for individual users built on `Meteor` and `React`. It provides data security through manual authentication, data validation, publications and subscriptions.
 
+This app can be found: [srt-lnk-mhs.herokuapp.com](https://srt-lnk-mhs.herokuapp.com/)
+
 ## Technologies & Tools Used
 
 * [Meteor](https://www.meteor.com/)
