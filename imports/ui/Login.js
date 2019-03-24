@@ -32,7 +32,7 @@ export default class Login extends React.Component {
     return (
       <div className='boxed-view'>
         <div className='boxed-view__box'>
-          <h1>Srt-Lnk Login</h1>
+          <h1>Login</h1>
 
           {this.state.error ? <p>{this.state.error}</p> : undefined}
 
@@ -43,7 +43,7 @@ export default class Login extends React.Component {
             <button className='button'>Login</button>
           </form>
 
-          <Link to='/signup'>Have an account?</Link>
+          <Link to='/signup'>Haven't registered yet?</Link>
         </div>
       </div>
     );

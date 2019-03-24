@@ -9,7 +9,7 @@ import LinksList from './LinksList';
 const Link = () => {
   return (
     <div>
-      <PrivateHeader title="Your Links"/>
+      <PrivateHeader title="Srt-Lnk"/>
 
       <div className='page-content'>
         <LinksListFilters />
