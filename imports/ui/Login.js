@@ -2,6 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Meteor } from 'meteor/meteor';
 
+import Alert from 'react-s-alert';
+import 'react-s-alert/dist/s-alert-default.css';
+import 'react-s-alert/dist/s-alert-css-effects/stackslide.css';
+
 
 export default class Login extends React.Component {
   constructor(props) {
@@ -28,13 +32,23 @@ export default class Login extends React.Component {
     });
   }
 
+  showError(error) {
+    Alert.error(error, {
+      position: 'bottom',
+      effect: 'stackslide',
+      preserveContext: true,
+      timeout: 7000
+    });
+  }
+
   render() {
     return (
       <div className='boxed-view'>
         <div className='boxed-view__box'>
           <h1>Login</h1>
 
-          {this.state.error ? <p>{this.state.error}</p> : undefined}
+          {this.state.error ? this.showError(this.state.error) : undefined}
+          <Alert stack={{ limit: 1 }} />
 
           <form onSubmit={this.onSubmit.bind(this)} noValidate className='boxed-view__form'>
             <input type="email" ref="email" name="email" placeholder="Email" />

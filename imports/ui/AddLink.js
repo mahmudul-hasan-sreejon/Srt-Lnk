@@ -2,6 +2,10 @@ import React from 'react';
 import Modal from 'react-modal';
 import { Meteor } from 'meteor/meteor';
 
+import Alert from 'react-s-alert';
+import 'react-s-alert/dist/s-alert-default.css';
+import 'react-s-alert/dist/s-alert-css-effects/stackslide.css';
+
 
 // bind modal to the app element
 Modal.setAppElement(document.getElementById('app'));
@@ -61,6 +65,15 @@ export default class AddLink extends React.Component {
     this.refs.url.focus();
   }
 
+  showError(error) {
+    Alert.error(error, {
+      position: 'bottom',
+      effect: 'stackslide',
+      preserveContext: true,
+      timeout: 7000
+    });
+  }
+
   render() {
     return (
       <div>
@@ -69,7 +82,8 @@ export default class AddLink extends React.Component {
         <Modal contentLabel='Add Link' isOpen={this.state.isOpen} onAfterOpen={this.afterOpenModal.bind(this)} onRequestClose={this.closeModal.bind(this)} className='boxed-view__box' overlayClassName='boxed-view boxed-view--modal'>
           <h1>Add a Link</h1>
 
-          {this.state.error ? <p>{this.state.error}</p> : undefined}
+          {this.state.error ? this.showError(this.state.error) : undefined}
+          <Alert stack={{ limit: 1 }} />
 
           <form onSubmit={this.onSubmit.bind(this)} className='boxed-view__form'>
             <input type='text' placeholder='URL' value={this.state.url} onChange={this.onChange.bind(this)} ref='url' />
