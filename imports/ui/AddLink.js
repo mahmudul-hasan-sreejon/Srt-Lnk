@@ -66,12 +66,16 @@ export default class AddLink extends React.Component {
   }
 
   showError(error) {
+    // call error alert
     Alert.error(error, {
       position: 'bottom',
       effect: 'stackslide',
       preserveContext: true,
       timeout: 7000
     });
+
+    // reset error state
+    this.setState({ error: '' });
   }
 
   render() {
