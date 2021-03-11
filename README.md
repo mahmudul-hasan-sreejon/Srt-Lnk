@@ -20,4 +20,4 @@ This app can be found: [srt-lnk-mhs.herokuapp.com](https://srt-lnk-mhs.herokuapp
 
 ## Author
 
-Created and maintained by Mahmudul Hasan Sreejon ([@mahmudul-hasan-sreejon](http://mahmudulhasansreejon.ml/)).
+Created and maintained by Mahmudul Hasan Sreejon ([@mahmudul-hasan-sreejon](https://www.mahmudul-hasan-sreejon.com/)).
