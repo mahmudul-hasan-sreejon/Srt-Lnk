@@ -1,9 +1,8 @@
 # Srt-Lnk
 
-Link/Url shortener web app that keeps track of links for individual users built on `Meteor` and `React`. It provides data security through manual authentication, data validation, publications and subscriptions.
+Link/Url shortener web app that keeps track of links for individual users built on [Meteor](https://www.meteor.com/) and [React](https://reactjs.org/). It provides data security through manual authentication, data validation, publications and subscriptions.
 
-This app can be found: [srt-lnk-mhs.herokuapp.com](https://srt-lnk-mhs.herokuapp.com/)
-
+![demo](https://raw.githubusercontent.com/mahmudul-hasan-sreejon/srt-lnk/main/static/demo.png)
 ## Technologies & Tools Used
 
 * [Meteor](https://www.meteor.com/)
