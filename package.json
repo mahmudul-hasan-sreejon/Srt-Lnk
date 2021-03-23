@@ -1,6 +1,6 @@
 {
-  "name": "Srt-Lnk",
-  "private": true,
+  "name": "srt-lnk",
+  "private": false,
   "scripts": {
     "start": "meteor run",
     "test": "meteor test --once --driver-package meteortesting:mocha",
@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.1.5",
-    "bcrypt": "^5.0.0",
+    "bcrypt": "^3.0.5",
     "clipboard": "^2.0.4",
     "meteor-node-stubs": "^0.4.1",
     "moment": "^2.24.0",
@@ -35,6 +35,6 @@
     "eslint-plugin-react": "^7.12.4"
   },
   "engines": {
-    "node": "8.11.4"
+    "node": "12.14.1"
   }
 }
