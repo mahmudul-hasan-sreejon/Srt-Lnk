@@ -2,7 +2,12 @@
 
 Link/Url shortener web app that keeps track of links for individual users built on [Meteor](https://www.meteor.com/) and [React](https://reactjs.org/). It provides data security through manual authentication, data validation, publications and subscriptions.
 
+<p align="center">
+  <img src="https://pyheroku-badge.herokuapp.com/?app=srt-lnk-mhs&style=flat" alt="Heroku Status" />
+</p>
+
 ![demo](https://raw.githubusercontent.com/mahmudul-hasan-sreejon/srt-lnk/main/static/demo.png)
+
 ## Technologies & Tools Used
 
 * [Meteor](https://www.meteor.com/)
